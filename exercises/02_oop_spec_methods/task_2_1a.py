@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 '''
-Задание 1.4a
+Задание 2.1a
 
-Добавить к классу CiscoTelnet из задания 1.4 метод send_config_commands.
+Добавить к классу CiscoTelnet из задания 2.1 метод send_config_commands.
 
 Метод принимает как аргумент список команд или одну команду (строку).
 
@@ -12,7 +12,7 @@
 
 Метод должен возвращать вывод, который показывает ввод каждой команды.
 
-In [1]: from task_4_1a import CiscoTelnet
+In [1]: from task_2_1a import CiscoTelnet
 
 In [2]: r1 = CiscoTelnet('192.168.100.1', 'cisco','cisco','cisco')
 
