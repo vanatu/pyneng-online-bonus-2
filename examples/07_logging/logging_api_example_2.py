@@ -4,9 +4,9 @@ logger = logging.getLogger('My Script')
 logger.setLevel(logging.DEBUG)
 
 console = logging.StreamHandler()
-console.setLevel(logging.DEBUG)
+console.setLevel(logging.WARNING)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                              datefmt='%H:%M:%S')
+                              datefmt='%Y-%m-%d %H:%M:%S')
 console.setFormatter(formatter)
 
 logger.addHandler(console)
@@ -15,4 +15,4 @@ logger.addHandler(console)
 logger.debug('Сообщение уровня debug %s', 'SOS')
 logger.info('Сообщение уровня info')
 logger.warning('Сообщение уровня warning')
-
+logger.error('Сообщение уровня error')

@@ -15,8 +15,7 @@ logger.addHandler(console)
 ### File
 logfile = logging.FileHandler('logfile3.log')
 logfile.setLevel(logging.WARNING)
-formatter = logging.Formatter('{asctime} - {name} - {levelname} - {message}',
-                              datefmt='%H:%M:%S', style='{')
+formatter = logging.Formatter('{asctime} - {name} - {levelname} - {message}', style='{')
 logfile.setFormatter(formatter)
 
 logger.addHandler(logfile)

@@ -1,9 +1,9 @@
 import logging
 
-logger = logging.getLogger('My Script')
+mylogger = logging.getLogger('My Script')
 
 ## messages
-logger.debug('Сообщение уровня debug')
-logger.info('Сообщение уровня info')
-logger.warning('Сообщение уровня warning')
+mylogger.debug('Сообщение уровня debug')
+mylogger.info('Сообщение уровня info')
+mylogger.warning('Сообщение уровня warning')
 

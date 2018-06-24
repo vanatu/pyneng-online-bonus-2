@@ -3,7 +3,7 @@ import logging
 logger = logging.getLogger('My Script')
 logger.setLevel(logging.DEBUG)
 
-logfile = logging.FileHandler('logfile.log', 'w')
+logfile = logging.FileHandler('logfile.log')
 logfile.setLevel(logging.WARNING)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logfile.setFormatter(formatter)

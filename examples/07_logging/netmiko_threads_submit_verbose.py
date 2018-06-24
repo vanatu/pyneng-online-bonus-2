@@ -2,7 +2,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pprint import pprint
 from datetime import datetime
 import time
-from itertools import repeat
 
 import yaml
 from netmiko import ConnectHandler
@@ -13,9 +12,9 @@ logger = logging.getLogger('My Script')
 logger.setLevel(logging.DEBUG)
 
 console = logging.StreamHandler()
-console.setLevel(logging.INFO)
+console.setLevel(logging.DEBUG)
 console.setFormatter(logging.Formatter(
-    '%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S'))
+    '%(asctime)s - %(thread)d -%(name)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S'))
 
 logger.addHandler(console)
 
@@ -52,5 +51,5 @@ def threads_conn(function, devices, limit=2, command=''):
 if __name__ == '__main__':
     devices = yaml.load(open('devices.yaml'))
     all_done = threads_conn(
-        connect_ssh, devices['routers'], command='sh ip int br')
+        connect_ssh, devices['routers'], command='sh clock')
     #pprint(all_done)

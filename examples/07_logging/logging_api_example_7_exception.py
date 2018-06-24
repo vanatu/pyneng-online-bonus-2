@@ -17,6 +17,7 @@ logger.debug('Before exception')
 try:
     2 + 'test'
 except TypeError as err:
+    #print(err)
     logger.exception('Возникла ошибка')
 
 logger.debug('After exception')

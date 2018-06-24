@@ -1,6 +1,8 @@
 import time
 import telnetlib
 print('Import cisco_connect/telnet.py')
+print(__name__)
+
 
 import logging
 

@@ -1,8 +1,8 @@
 print('Import cisco_connect/__init__.py')
+print("__name:", __name__)
 
 from .ssh import *
 from .telnet import *
-from .parse_data import *
 
 import logging
 

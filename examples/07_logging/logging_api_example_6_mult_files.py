@@ -16,3 +16,12 @@ if __name__ == "__main__":
     logger.debug('Before function')
     send_show_command(device_params, 'sh ip int br')
     logger.debug('After function')
+
+logger.setLevel(logging.WARNING)
+
+if __name__ == "__main__":
+    logger.warning('Before function')
+    send_show_command(device_params, 'sh ip int br')
+    logger.warning('After function')
+
+

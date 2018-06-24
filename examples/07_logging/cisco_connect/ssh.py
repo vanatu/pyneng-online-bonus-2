@@ -4,7 +4,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 print('Import cisco_connect/ssh.py')
-
+print("__name__:", __name__)
 
 class CiscoSSH:
     def __init__(self, **device_params):
