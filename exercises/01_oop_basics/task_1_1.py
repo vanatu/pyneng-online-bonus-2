@@ -42,9 +42,14 @@ topology_example = {('R1', 'Eth0/0'): ('SW1', 'Eth0/1'),
                     ('SW1', 'Eth0/3'): ('R3', 'Eth0/0')}
 
 class Topology:
-    def __init__(self, topology):
-        self.topology = topology
+    def __init__(self, top_dict):
+        self.top_dict = top_dict
+        print()
+        self._del_dubles()
 
+    def _del_dubles(self):
+        for entry in self.top_dict.values():
+            if entry not in self.top_dict:
+                print(entry)
 
 top = Topology(topology_example)
-print(top.topology)
