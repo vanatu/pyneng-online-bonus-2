@@ -42,9 +42,9 @@ topology_example = {('R1', 'Eth0/0'): ('SW1', 'Eth0/1'),
                     ('SW1', 'Eth0/3'): ('R3', 'Eth0/0')}
 
 class Topology:
-    def __init__(self, topol_dict):
+    def __init__(self, topology_dict):
         self.topology = {}
-        for k,v in topol_dict.items():
+        for k,v in topology_dict.items():
             if k not in self.topology.values():
                 self.topology[k] = v
 

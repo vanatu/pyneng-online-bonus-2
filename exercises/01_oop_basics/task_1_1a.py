@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from pprint import pprint
 '''
 Задание 1.1a
 
@@ -15,6 +15,12 @@ class Topology:
     def __init__(self, topology_dict):
         self.topology = self._normalize(topology_dict)
 
+    def _normalize(self, topology_dict):
+        result = {}
+        for k,v in topology_dict.items():
+            if k not in result.values():
+                result[k] = v
+        return result
 
 topology_example = {('R1', 'Eth0/0'): ('SW1', 'Eth0/1'),
                     ('R2', 'Eth0/0'): ('SW1', 'Eth0/2'),
@@ -26,3 +32,5 @@ topology_example = {('R1', 'Eth0/0'): ('SW1', 'Eth0/1'),
                     ('SW1', 'Eth0/2'): ('R2', 'Eth0/0'),
                     ('SW1', 'Eth0/3'): ('R3', 'Eth0/0')}
 
+top = Topology(topology_example)
+pprint(top.topology)
