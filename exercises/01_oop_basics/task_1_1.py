@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from pprint import pprint
 '''
 Задание 1.1
 
@@ -42,14 +42,11 @@ topology_example = {('R1', 'Eth0/0'): ('SW1', 'Eth0/1'),
                     ('SW1', 'Eth0/3'): ('R3', 'Eth0/0')}
 
 class Topology:
-    def __init__(self, top_dict):
-        self.top_dict = top_dict
-        print()
-        self._del_dubles()
-
-    def _del_dubles(self):
-        for entry in self.top_dict.values():
-            if entry not in self.top_dict:
-                print(entry)
+    def __init__(self, topol_dict):
+        self.topology = {}
+        for k,v in topol_dict.items():
+            if k not in self.topology.values():
+                self.topology[k] = v
 
 top = Topology(topology_example)
+pprint(top.topology)
