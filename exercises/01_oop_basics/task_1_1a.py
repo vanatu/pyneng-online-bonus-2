@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from pprint import pprint
 '''
 Задание 1.1a
 
@@ -10,6 +9,7 @@ from pprint import pprint
 
 Метод __init__ должен выглядеть таким образом:
 '''
+from pprint import pprint
 
 class Topology:
     def __init__(self, topology_dict):
@@ -32,5 +32,5 @@ topology_example = {('R1', 'Eth0/0'): ('SW1', 'Eth0/1'),
                     ('SW1', 'Eth0/2'): ('R2', 'Eth0/0'),
                     ('SW1', 'Eth0/3'): ('R3', 'Eth0/0')}
 
-top = Topology(topology_example)
-pprint(top.topology)
+t = Topology(topology_example)
+pprint(t.topology)

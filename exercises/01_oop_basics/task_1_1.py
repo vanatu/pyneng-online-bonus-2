@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from pprint import pprint
 '''
 Задание 1.1
 
@@ -30,6 +29,14 @@ Out[3]:
 
 
 '''
+from pprint import pprint
+
+class Topology:
+    def __init__(self, topology_dict):
+        self.topology = {}
+        for k,v in topology_dict.items():
+            if k not in self.topology.values():
+                self.topology[k] = v
 
 topology_example = {('R1', 'Eth0/0'): ('SW1', 'Eth0/1'),
                     ('R2', 'Eth0/0'): ('SW1', 'Eth0/2'),
@@ -41,12 +48,5 @@ topology_example = {('R1', 'Eth0/0'): ('SW1', 'Eth0/1'),
                     ('SW1', 'Eth0/2'): ('R2', 'Eth0/0'),
                     ('SW1', 'Eth0/3'): ('R3', 'Eth0/0')}
 
-class Topology:
-    def __init__(self, topology_dict):
-        self.topology = {}
-        for k,v in topology_dict.items():
-            if k not in self.topology.values():
-                self.topology[k] = v
-
-top = Topology(topology_example)
-pprint(top.topology)
+t = Topology(topology_example)
+pprint(t.topology)
