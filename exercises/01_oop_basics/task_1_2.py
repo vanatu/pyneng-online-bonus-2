@@ -25,7 +25,17 @@ Out[4]: 'Interface                  IP-Address      OK? Method Status           
 
 
 '''
-
 import netmiko
 
+class HuaweiSSH:
+    def __init__(self, ip, username, password):
+        device_dict = {'device_type':'huawei',
+        'username': username,
+        'password': password,
+        'ip':ip}
 
+        self.ssh = netmiko.ConnectHandler(**device_dict)
+
+r1_ssh = HuaweiSSH('192.168.0.110', 'lab', 'Lab123')
+
+print(r1_ssh.ssh.send_command('display cur'))
