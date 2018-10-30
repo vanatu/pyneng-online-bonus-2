@@ -38,4 +38,4 @@ class HuaweiSSH:
 
 r1_ssh = HuaweiSSH('192.168.0.110', 'lab', 'Lab123')
 
-print(r1_ssh.ssh.send_command('display cur'))
+print(r1_ssh.ssh.send_command('display ip int br'))
