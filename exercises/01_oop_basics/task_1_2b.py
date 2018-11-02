@@ -54,7 +54,7 @@ Out[4]:
   'STATUS': 'up'}]
 
 '''
-import netmiko
+import netmiko, clitable
 
 class HuaweiSSH:
     def __init__(self, ip, username, password):
