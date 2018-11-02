@@ -72,7 +72,7 @@ class HuaweiSSH:
     def send_and_parse_show(self, command, index_file='index', templates_dir='templates'):
         output = self.send_show_command(command)
         cli_table = clitable.CliTable(index_file, templates_dir)
-        attributes = {'Vendor':'huawei'}
+        attributes = {'Vendor':'huawei', 'Command':command}
         cli_table.ParseCmd(output, attributes)
         keys = list(cli_table.header)
         rows = [row for row in cli_table]
