@@ -1,4 +1,4 @@
-Value INT (\S+)
+Value INT (\S+Eth\S+)
 Value ADDR (\S+)
 Value STATUS (up|down|administratively down)
 Value PROTO (up|down)

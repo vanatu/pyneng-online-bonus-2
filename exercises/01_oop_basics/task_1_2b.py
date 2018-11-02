@@ -55,6 +55,7 @@ Out[4]:
 
 '''
 import netmiko, clitable
+from pprint import pprint
 
 class HuaweiSSH:
     def __init__(self, ip, username, password):
@@ -68,9 +69,15 @@ class HuaweiSSH:
     def send_show_command(self, command):
         return self.ssh.send_command(command)
 
-    def send_and_parse_show(self, command):
-        return self.send_show_command(command)
+    def send_and_parse_show(self, command, index_file='index', templates_dir='templates'):
+        output = self.send_show_command(command)
+        cli_table = clitable.CliTable(index_file, templates_dir)
+        attributes = {'Vendor':'huawei'}
+        cli_table.ParseCmd(output, attributes)
+        keys = list(cli_table.header)
+        rows = [row for row in cli_table]
+        return [{k:v for k, v in zip(keys,row)} for row in rows]
 
 r1 = HuaweiSSH('192.168.0.110', 'lab', 'Lab123')
 
-print(r1.send_and_parse_show('display ip int br'))
+pprint(r1.send_and_parse_show('display ip int br', index_file='index', templates_dir='templates'))
